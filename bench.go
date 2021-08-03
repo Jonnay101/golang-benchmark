@@ -36,3 +36,21 @@ func getLastnamesIndex(fullnames []string) []string {
 
 	return lastNames[:idx+1]
 }
+
+func addNumsLoop(nums ...int) int {
+	total := 0
+
+	for _, num := range nums {
+		total += num
+	}
+
+	return total
+}
+
+func addNumsRecursive(nums ...int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+
+	return nums[0] + addNumsRecursive(nums[1:]...)
+}
